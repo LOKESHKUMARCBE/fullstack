@@ -1,0 +1,7 @@
+<h1>{{ title }}</h1>
+
+<p>Student Name: {{ studentName }}</p>
+<p>Total Marks: {{ marks }}</p>
+<p>Result: {{ marks >= 50 ? 'PASS' : 'FAIL' }}</p>
+
+<button [disabled]="isDisabled">Submit</button>

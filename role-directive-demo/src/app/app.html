@@ -1,0 +1,28 @@
+<h2>Role-Based UI Control</h2>
+
+<label><strong>Select Role:</strong></label>
+<select #roleSelect (change)="changeRole(roleSelect.value)">
+  <option value="admin">Admin</option>
+  <option value="faculty">Faculty</option>
+  <option value="student">Student</option>
+</select>
+
+<hr>
+
+<ng-template
+  appHasRole="admin"
+  [appHasRoleUser]="currentRole">
+  <button>Delete User</button>
+</ng-template>
+
+<ng-template
+  appHasRole="faculty"
+  [appHasRoleUser]="currentRole">
+  <button>Upload Marks</button>
+</ng-template>
+
+<ng-template
+  appHasRole="student"
+  [appHasRoleUser]="currentRole">
+  <button>View Results</button>
+</ng-template>

@@ -1,0 +1,9 @@
+<h2>Server Communication Demo</h2>
+
+<button (click)="loadUsers()">Load Users</button>
+
+<ul>
+  <li *ngFor="let user of users">
+    {{ user.name }} - {{ user.email }}
+  </li>
+</ul>

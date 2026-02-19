@@ -1,0 +1,25 @@
+<h2>Course Feedback System</h2>
+
+<h3>Add Feedback</h3>
+<input placeholder="Course"
+       [(ngModel)]="newFeedback.course">
+
+<input type="number"
+       placeholder="Rating"
+       [(ngModel)]="newFeedback.rating">
+
+<input placeholder="Comment"
+       [(ngModel)]="newFeedback.comment">
+
+<button (click)="addFeedback()">Add</button>
+
+<hr>
+
+<h3>All Feedback</h3>
+
+<ul>
+  <li *ngFor="let f of feedbacks">
+    {{f.course}} - {{f.rating}} ⭐ - {{f.comment}}
+    <button (click)="deleteFeedback(f.id)">Delete</button>
+  </li>
+</ul>

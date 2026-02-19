@@ -1,0 +1,10 @@
+<h1>Event & Two-Way Binding</h1>
+<!-- Two-Way Binding -->
+<input [(ngModel)]="username" placeholder="Enter name">
+<p>Welcome {{ username }}</p>
+
+<hr>
+
+<!-- Event Binding -->
+<p>Counter: {{ counter }}</p>
+<button (click)="increment()">Increment</button>

@@ -1,0 +1,35 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "username": "student",
+      "password": "1234"
+    }
+  ],
+  "feedbacks": [
+    {
+      "id": "1",
+      "course": "AI",
+      "rating": 5,
+      "comment": "Excellent"
+    },
+    {
+      "id": "02f7",
+      "course": "CSE",
+      "rating": 11,
+      "comment": "GOOD"
+    },
+    {
+      "id": "b741",
+      "course": "DBMS",
+      "rating": 11,
+      "comment": "GOOD"
+    },
+    {
+      "id": "fa53",
+      "course": "FSD",
+      "rating": 10,
+      "comment": "BAD"
+    }
+  ]
+}

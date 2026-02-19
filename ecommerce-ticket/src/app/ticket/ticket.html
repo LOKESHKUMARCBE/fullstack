@@ -1,0 +1,52 @@
+<h2>Raise Support Ticket</h2>
+
+<form [formGroup]="ticketForm" (ngSubmit)="onSubmit()">
+
+  <input type="text" placeholder="Customer Name" formControlName="customerName">
+  <input type="email" placeholder="Email" formControlName="email">
+  <input type="tel" placeholder="Phone" formControlName="phone">
+  <input type="text" placeholder="Order ID" formControlName="orderId">
+  <input type="date" [max]="today" formControlName="purchaseDate">
+  <input type="number" placeholder="Product Price" formControlName="productPrice">
+  <input type="number" placeholder="Quantity" formControlName="quantity">
+
+  <select formControlName="issueType">
+    <option value="">Select Issue</option>
+    <option>Damaged</option>
+    <option>Wrong Item</option>
+    <option>Late Delivery</option>
+    <option>Refund</option>
+  </select>
+
+  <label>Priority:</label>
+  <label><input type="radio" value="Low" formControlName="priority"> Low</label>
+  <label><input type="radio" value="Medium" formControlName="priority"> Medium</label>
+  <label><input type="radio" value="High" formControlName="priority"> High</label>
+
+  <label>
+    <input type="checkbox" formControlName="refundRequired">
+    Refund Required
+  </label>
+
+  <select formControlName="deliveryMode">
+    <option value="">Delivery Mode</option>
+    <option>Standard</option>
+    <option>Express</option>
+  </select>
+
+  <textarea rows="4" placeholder="Issue Description" formControlName="issueDescription"></textarea>
+
+  <input type="file">
+
+  <div formArrayName="products">
+    <div *ngFor="let p of products.controls; let i = index">
+      <input [formControlName]="i" placeholder="Product Name">
+      <button type="button" (click)="removeProduct(i)">Remove</button>
+    </div>
+    <button type="button" (click)="addProduct()">Add Product</button>
+  </div>
+
+  <br><br>
+  <button type="submit" [disabled]="ticketForm.invalid">Submit</button>
+
+</form>

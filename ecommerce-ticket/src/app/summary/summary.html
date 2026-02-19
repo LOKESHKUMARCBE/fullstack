@@ -1,0 +1,17 @@
+<h2>Complaint Summary</h2>
+
+<div *ngIf="data">
+
+  <p><strong>Name:</strong> {{ data.customerName }}</p>
+  <p><strong>Email:</strong> {{ data.email }}</p>
+  <p><strong>Phone:</strong> {{ data.phone }}</p>
+  <p><strong>Order ID:</strong> {{ data.orderId }}</p>
+  <p><strong>Issue Type:</strong> {{ data.issueType }}</p>
+  <p><strong>Description:</strong> {{ data.issueDescription }}</p>
+
+  <h3>Products:</h3>
+  <ul>
+    <li *ngFor="let p of data.products">{{ p }}</li>
+  </ul>
+
+</div>

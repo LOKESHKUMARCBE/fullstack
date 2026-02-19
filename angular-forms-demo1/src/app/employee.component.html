@@ -1,0 +1,23 @@
+<h2>Employee Management</h2>
+
+<form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+
+  <input type="text" placeholder="Name" formControlName="name">
+  <input type="text" placeholder="Department" formControlName="department">
+
+  <div formArrayName="skills">
+    <h4>Skills</h4>
+    <div *ngFor="let skill of skills.controls; let i = index">
+      <input [formControlName]="i">
+      <button type="button" (click)="removeSkill(i)">Remove</button>
+    </div>
+  </div>
+
+  <button type="button" (click)="addSkill()">Add Skill</button>
+  <br><br>
+
+  <button type="submit" [disabled]="employeeForm.invalid">
+    Submit
+  </button>
+
+</form>
